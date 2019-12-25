@@ -1,0 +1,13 @@
+Exception during training: catboost/private/libs/options/loss_description.cpp:17: binary loss is not supported
+Traceback (most recent call last):
+  File "/opt/program/train", line 56, in train
+    clf = clf.fit(train_X, train_y)
+  File "/usr/local/lib/python3.5/dist-packages/catboost/core.py", line 3789, in fit
+    self._check_is_classification_objective(params['loss_function'])
+  File "/usr/local/lib/python3.5/dist-packages/catboost/core.py", line 4110, in _check_is_classification_objective
+    if isinstance(loss_function, str) and not self._is_classification_objective(loss_function):
+  File "/usr/local/lib/python3.5/dist-packages/catboost/core.py", line 1348, in _is_classification_objective
+    return isinstance(loss_function, str) and is_classification_objective(loss_function)
+  File "_catboost.pyx", line 5036, in _catboost.is_classification_objective
+  File "_catboost.pyx", line 5037, in _catboost.is_classification_objective
+_catboost.CatBoostError: catboost/private/libs/options/loss_description.cpp:17: binary loss is not supported
